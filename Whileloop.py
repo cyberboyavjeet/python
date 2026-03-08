@@ -1,4 +1,4 @@
  i=7
-while(i>0){
- print("Avjeet")
- i--}
+while(i>0):
+    print("Avjeet")
+    i+=1

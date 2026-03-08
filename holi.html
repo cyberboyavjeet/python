@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Holi Surprise 🌈</title>
+
+<style>
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', sans-serif;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: 
+        linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)),
+        url('https://images.unsplash.com/photo-1615897573729-6f6f1c2b3f52?auto=format&fit=crop&w=1600&q=80');
+    background-size: cover;
+    background-position: center;
+    transition: 1s ease;
+}
+
+.card {
+    background: rgba(255,255,255,0.15);
+    backdrop-filter: blur(15px);
+    padding: 40px;
+    border-radius: 25px;
+    text-align: center;
+    color: white;
+    width: 90%;
+    max-width: 520px;
+    box-shadow: 0 0 40px rgba(255,255,255,0.6);
+    animation: fadeIn 2s ease;
+}
+
+@keyframes fadeIn {
+    from {opacity: 0; transform: scale(0.8);}
+    to {opacity: 1; transform: scale(1);}
+}
+
+h1 { font-size: 28px; }
+p { font-size: 18px; margin-top: 15px; }
+
+input {
+    padding: 10px;
+    border-radius: 20px;
+    border: none;
+    margin-top: 15px;
+    width: 80%;
+    text-align: center;
+}
+
+button {
+    margin-top: 20px;
+    padding: 12px 30px;
+    border: none;
+    border-radius: 30px;
+    font-size: 16px;
+    cursor: pointer;
+    background: #ff4e8d;
+    color: white;
+    transition: 0.3s;
+}
+
+button:hover { transform: scale(1.1); }
+
+.final {
+    font-size: 22px;
+    font-weight: bold;
+    margin-top: 20px;
+    animation: fadeIn 2s ease forwards;
+}
+
+/* Floating Holi Color Dots */
+.color {
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    animation: float 8s linear infinite;
+}
+
+@keyframes float {
+    0% {transform: translateY(100vh) scale(0);}
+    100% {transform: translateY(-10vh) scale(1);}
+}
+</style>
+</head>
+
+<body>
+
+<audio id="bgMusic" loop>
+    <source src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_c8a1f1fdf7.mp3?filename=romantic-piano-110624.mp3" type="audio/mpeg">
+</audio>
+
+<div class="card" id="card">
+    <div id="intro">
+        <h1>🌈 A Holi Surprise Awaits...</h1>
+        <p>Before we begin, tell me your beautiful name 💖</p>
+        <input type="text" id="nameInput" placeholder="Enter your name">
+        <br>
+        <button onclick="begin()">Start 🎨</button>
+    </div>
+
+    <div id="content"></div>
+</div>
+
+<script>
+
+let herName = "";
+let step = 0;
+
+function begin(){
+    herName = document.getElementById("nameInput").value;
+    if(herName === ""){
+        alert("Please enter your name 🌸");
+        return;
+    }
+
+    document.getElementById("bgMusic").play();
+    document.getElementById("intro").style.display = "none";
+    nextStep();
+}
+
+function nextStep(){
+    step++;
+    const content = document.getElementById("content");
+
+    if(step === 1){
+        content.innerHTML = "<h1>Happy Holi, " + herName + " 🌈</h1><p>May your life be filled with colors brighter than this sky ✨</p><button onclick='nextStep()'>Next 💖</button>";
+    }
+
+    else if(step === 2){
+        content.innerHTML = "<h1>For You, " + herName + " 🌸</h1><p>This festival feels magical because you are part of this world 💕</p><button onclick='nextStep()'>Continue 😌</button>";
+    }
+
+    else if(step === 3){
+        content.innerHTML = "<h1>Just One More Thing...</h1><p>The most beautiful color of Holi is your smile, " + herName + " ✨</p><button onclick='nextStep()'>Almost There 💓</button>";
+    }
+
+    else if(step === 4){
+        content.innerHTML = "<h1>My Wish 💌</h1><p>May every dream of yours come true, and may I always see you happy, " + herName + " 🌷</p><button onclick='nextStep()'>Final Surprise 🎁</button>";
+    }
+
+    else if(step === 5){
+        content.innerHTML = "<div class='final'>You make my world more colorful than Holi ever could 🌈<br><br>And maybe... I like you more than just a festival wish, " + herName + " ❤️</div>";
+    }
+}
+
+/* Floating Holi Colors */
+for(let i = 0; i < 40; i++){
+    let color = document.createElement("div");
+    color.classList.add("color");
+    color.style.left = Math.random() * 100 + "vw";
+    color.style.background = `hsl(${Math.random()*360}, 100%, 60%)`;
+    color.style.animationDuration = (Math.random()*5+5) + "s";
+    document.body.appendChild(color);
+}
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,6 @@
+x= input("Enter the USer name ")
+print(x)
+print(type(x))
+y= int(input("Enter your phone number"))
+print(y)
+print(type(y))
