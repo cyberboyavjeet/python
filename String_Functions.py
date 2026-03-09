@@ -21,6 +21,9 @@ print(a.isidentifier())
 print(a.format())
 #print(a.format_map())
 print(a.replace("A","AA"))
+print(a.split(","))
+print(a.strip())
+
 
 
 
