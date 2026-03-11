@@ -1,5 +1,6 @@
-a=1
-for i in range (1,5):
-    print("")
-    for j in range(1,i):
-        print(i*j)
+a=int(input("Enter the Nuber of lines: "))
+for i in range (1,a+1):
+    for j in range(1,i+1):
+        print(j,end="")
+    print()
+   
