@@ -2,7 +2,7 @@ a=input("Enter the Any String: ")
 alph=False
 alnumm= False
 digit=False
-
+b="Love Avjeet"
 #print(str.expandtabs)
 for ch in a:
     if ch.isalpha():
@@ -23,8 +23,13 @@ print(a.format())
 print(a.replace("A","AA"))
 print(a.split(","))
 print(a.strip())
-
-
+print(a.find("ar"))
+print(a.rfind("r"))
+print(a.index("r"))
+print(a.rindex("A"))
+print(a.count(" "))
+print(a.split("a"))
+print(a.join(b))
 
 
 
