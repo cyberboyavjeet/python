@@ -1,5 +1,5 @@
 list1=[1,0,0,2,'hi','',[]]
-print(list(filter(bool.0)))
+print(list(filter(bool,list1)))#if "",0,[]considered as flase in boolean
 #print(list1)
 print(list1[-1])#reverse indexing
 print(list1[1:3])#slicing based rangein list
