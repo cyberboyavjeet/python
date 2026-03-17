@@ -6,3 +6,5 @@ print(list1[1:3])#slicing based rangein list
 print(list1[0:6])#slicing
 print(list1[-10:])
 print(list1[-2:-2])#empty list
+list1.sort()
+print(list1)
