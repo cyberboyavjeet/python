@@ -1,2 +1,1 @@
-Name: Avjeet Kumar
-College: Unknown
+Name: Avjeet Kumar College: Unknown
