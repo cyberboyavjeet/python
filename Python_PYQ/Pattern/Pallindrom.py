@@ -1,4 +1,4 @@
-a=input("Enter the Name(Excpet word (Arti): ")
+a=input("Enter the Name(Excpet word ): ")
 if a==a[::-1]:
     print("Pallindrom")
 else :
